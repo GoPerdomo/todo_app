@@ -26,3 +26,8 @@ ul {
 
   box-shadow: 0 0 30px -5px #000;
 }
+
+.delete-button {
+  color: black;
+  text-decoration: none;
+}

@@ -20,8 +20,11 @@ const renderList = (ul, list) => {
 
 const addButtons = (item) => {
   const checkbox = elementGenerator('input', '', 'checkbox');
+  const close = elementGenerator('a', '&times;', 'delete-button')
   checkbox.type = 'checkbox';
+  close.href = '#';
   item.prepend(checkbox);
+  item.appendChild(close);
 };
 
 // Wait till the dom is rendered
