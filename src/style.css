@@ -7,7 +7,7 @@ p {
 }
 
 ul {
-  list-style-type: none;
+  list-style: none;
 }
 
 .todo-app {
@@ -25,6 +25,15 @@ ul {
   background-color: white;
 
   box-shadow: 0 0 30px -5px #000;
+}
+
+.incomplete-task {
+  text-decoration: none;
+}
+
+.complete-task {
+  text-decoration: line-through;
+  font-style: italic;
 }
 
 .delete-button {
