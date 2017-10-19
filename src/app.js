@@ -64,6 +64,15 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 
+  ul.addEventListener('click', (event) => {
+    const parent = event.target.parentNode;
+    if(event.target.tagName === 'A') {
+      const parentIndex = list.indexOf(parent);
+      list.splice(parentIndex, 1);
+      ul.removeChild(parent);
+    }
+  });
+
   button.addEventListener('click', (event) => {
     event.preventDefault();
     const li = elementGenerator('li', input.value);
