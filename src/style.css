@@ -1,0 +1,25 @@
+body {
+  background-color: lightgray;
+}
+
+p {
+  color: white;
+}
+
+
+.todo-app {
+  height: 80vh;
+  min-height: 400px;
+  width: 80vw;
+  min-width: 600px;
+  margin: 10vh auto 0;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  
+  border: 1px solid white;
+  background-color: white;
+
+  box-shadow: 0 0 30px -5px #000;
+}
