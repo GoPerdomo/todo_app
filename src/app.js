@@ -18,6 +18,15 @@ const renderList = (ul, list) => {
   }
 };
 
+const addButtons = (item) => {
+  const checkbox = elementGenerator('input', '', 'checkbox');
+  const close = elementGenerator('a', '&times;', 'delete-button')
+  checkbox.type = 'checkbox';
+  close.href = '#';
+  item.prepend(checkbox);
+  item.appendChild(close);
+};
+
 // Wait till the dom is rendered
 document.addEventListener("DOMContentLoaded", function () {
   const root = document.querySelector('#root');
@@ -25,7 +34,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const ul = document.createElement('ul');
   const list = [elementGenerator('li', 'Checkbox'),
                 elementGenerator('li', 'Line-through'),
-                elementGenerator('li', 'Delete button')];
+                elementGenerator('li', 'Delete button')];   // TODO: Delete after implementing DB
   const form = elementGenerator('form', '', 'form-wrapper');
   const input = elementGenerator('input');
   const button = elementGenerator('button', 'Add to List')
@@ -39,11 +48,18 @@ document.addEventListener("DOMContentLoaded", function () {
   form.appendChild(input);
   form.appendChild(button);
 
+  // TODO: Delete after implementing DB
+  for(let i = 0; i < list.length; i++) {
+    addButtons(list[i]);
+  }
   renderList(ul, list);
+  //
 
   button.addEventListener('click', (event) => {
     event.preventDefault();
-    list.push(elementGenerator('li', input.value));
+    const li = elementGenerator('li', input.value);
+    addButtons(li);
+    list.push(li);
     input.value = '';
     renderList(ul, list);
   });
