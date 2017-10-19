@@ -19,7 +19,7 @@ const renderList = (ul, list) => {
 };
 
 const addButtons = (item) => {
-  const checkbox = elementGenerator('input', '', 'checkbox');
+  const checkbox = elementGenerator('input', '', 'incomplete-task');
   const close = elementGenerator('a', '&times;', 'delete-button')
   checkbox.type = 'checkbox';
   close.href = '#';
@@ -54,6 +54,24 @@ document.addEventListener("DOMContentLoaded", function () {
   }
   renderList(ul, list);
   //
+
+  ul.addEventListener('change', (event) => {
+    const parent = event.target.parentNode;
+    if(event.target.checked === true) {
+      parent.className = 'complete-task';
+    } else {
+      parent.className = 'incomplete-task';
+    }
+  });
+
+  ul.addEventListener('click', (event) => {
+    const parent = event.target.parentNode;
+    if(event.target.tagName === 'A') {
+      const parentIndex = list.indexOf(parent);
+      list.splice(parentIndex, 1);
+      ul.removeChild(parent);
+    }
+  });
 
   button.addEventListener('click', (event) => {
     event.preventDefault();
