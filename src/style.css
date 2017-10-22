@@ -10,6 +10,18 @@ ul {
   list-style: none;
 }
 
+li {
+  width: 300px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.add-to-list {
+  width: 35vh;
+  margin-right: 20px;
+  text-align: center
+}
+
 .todo-app {
   height: 80vh;
   min-height: 400px;
@@ -27,11 +39,11 @@ ul {
   box-shadow: 0 0 30px -5px #000;
 }
 
-.incomplete-task {
+.incomplete-task span{
   text-decoration: none;
 }
 
-.complete-task {
+.complete-task span{
   text-decoration: line-through;
   font-style: italic;
 }
