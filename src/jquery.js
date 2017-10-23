@@ -34,13 +34,12 @@ $(document).ready( () => {
     }, 1000);
 });
 
-const highlightIt = (element, action) => {
-    const $el = $(element);
-    let hlColor = '#ffff99';
-    if (action === 'del') {
-        hlColor = '#ea7373';
-    }
-    $el.effect('highlight', {color: hlColor}, 200);
+const highlightIt = (element) => {
+    $(element).effect('highlight', 200);
 }
 
-export { highlightIt }
+const explodeIt = (element) => {
+    $(element).effect('explode', 200);
+}
+
+export { highlightIt, explodeIt }
