@@ -1,13 +1,10 @@
 body {
-  background-color: lightgray;
-}
-
-p {
-  color: white;
+  background-color: silver;
 }
 
 ul {
   list-style: none;
+  padding: 0;
 }
 
 li {
@@ -44,11 +41,11 @@ li span:hover {
   box-shadow: 0 0 30px -5px #000;
 }
 
-.incomplete-task span{
+.incomplete-task span {
   text-decoration: none;
 }
 
-.complete-task span{
+.complete-task span {
   text-decoration: line-through;
   font-style: italic;
 }

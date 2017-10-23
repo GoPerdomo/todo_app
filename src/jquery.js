@@ -11,26 +11,30 @@ $(document).ready( () => {
     $todo.css('display', 'none').children().hide();;
     $todo.show('fold', 1000);
 
-    setTimeout(function() {
+    setTimeout(() => {
         $('.header').show('fade', 1000);
 
-        setTimeout(function() {
+        setTimeout(() => {
             const $li = $('ul').children();
             $li.hide();
             $('ul').show();
-            for(let i = 1; i <= $li.length*2; i++) {
+            let delay = 0;
+            for(let i = 1; i <= $li.length; i++) {
                 const $current = $(`ul li:nth-child(${i})`);
-                if($li.index($current) % 2 !== 0) {
-                    $current.show('drop', {direction: 'right'}, 600);
-                } else {
-                    $current.show('drop', {direction: 'left'}, 600);
-                }
+                setTimeout(() => {
+                    if($li.index($current) % 2 !== 0) {
+                        $current.show('drop', {direction: 'right'}, 600);
+                    } else {
+                        $current.show('drop', {direction: 'left'}, 600);
+                    }
+                }, delay += 200);
             }
 
-            setTimeout(function() {
+            setTimeout(() => {
                 $('.todo-app form').show('slide', {direction: 'down'}, 600);
-            }, 1000);
+            }, delay += 500);
         }, 1000);
+
     }, 1000);
 });
 
