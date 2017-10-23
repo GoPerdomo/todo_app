@@ -16,6 +16,11 @@ li {
   justify-content: space-between;
 }
 
+li span:hover {
+  font-style: italic;
+  cursor: default;
+}
+
 .add-to-list {
   width: 35vh;
   margin-right: 20px;

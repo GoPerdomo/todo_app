@@ -2,7 +2,7 @@
 
 import 'normalize.css';
 import './style.css';
-import { highlightIt } from './jquery.js';
+import { highlightIt, explodeIt } from './jquery.js';
 
 const elementGenerator = (el, text, classNames) => {
   const html = document.createElement(el);
@@ -37,9 +37,11 @@ document.addEventListener("DOMContentLoaded", function () {
   const root = document.querySelector('#root');
   const wrapper = elementGenerator('div', '', ['todo-app']);
   const ul = document.createElement('ul');
-  const list = [elementGenerator('li', '<span>Checkbox</span>', ['incomplete-task']),
-                elementGenerator('li', '<span>Line-through</span>', ['incomplete-task']),
-                elementGenerator('li', '<span>Delete button</span>', ['incomplete-task'])];   // TODO: Delete after implementing DB
+  const list = [elementGenerator('li', '<span>Placeholder1</span>', ['incomplete-task']),
+                elementGenerator('li', '<span>Placeholder2</span>', ['incomplete-task']),
+                elementGenerator('li', '<span>Placeholder3</span>', ['incomplete-task']),
+                elementGenerator('li', '<span>Placeholder4</span>', ['incomplete-task']),
+                elementGenerator('li', '<span>Placeholder5</span>', ['incomplete-task'])];   // TODO: Delete after implementing DB
   const form = elementGenerator('form', '', ['form-wrapper']);
   const addToList = elementGenerator('input', '', ['add-to-list']);
   const button = elementGenerator('button', 'Add to List')
@@ -75,7 +77,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const parent = event.target.parentNode;
     if(event.target.tagName === 'A') {
       const parentIndex = list.indexOf(parent);
-      highlightIt(parent, 'del');
+      explodeIt(parent);
       setTimeout(() => {
         list.splice(parentIndex, 1);
         ul.removeChild(parent);
@@ -90,7 +92,7 @@ document.addEventListener("DOMContentLoaded", function () {
       const li = elementGenerator('li', `<span>${addToList.value}</span>`, ['incomplete-task']);
       addButtons(li);
       list.push(li);
-      highlightIt(li, 'add');
+      highlightIt(li);
       addToList.value = '';
       renderList(ul, list);
     }
