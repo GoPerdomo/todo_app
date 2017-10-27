@@ -1,0 +1,33 @@
+{
+  "name": "todo_app-backend",
+  "version": "1.0.0",
+  "description": "Backend for TodoApp",
+  "main": "server.js",
+  "scripts": {
+    "start": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Propulsion-Academy/todo_app-backend.git"
+  },
+  "keywords": [
+    "node",
+    "express",
+    "db",
+    "todoApp"
+  ],
+  "author": "propulsion-academy",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Propulsion-Academy/todo_app-backend/issues"
+  },
+  "homepage": "https://github.com/Propulsion-Academy/todo_app-backend#readme",
+  "devDependencies": {
+    "dotenv": "^4.0.0",
+    "nodemon": "^1.12.1"
+  },
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2"
+  }
+}
